@@ -7,24 +7,79 @@
     <title>Laravel form</title>
 
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet" type="text/css">
+    <style>
+        html, body {
+            background-color: #fff;
+            color: #636b6f;
+            font-family: 'Nunito', sans-serif;
+            font-weight: 200;
+            height: 100vh;
+            margin: 0;
+        }
 
+        .full-height {
+            height: 100vh;
+        }
+
+        .flex-center {
+            align-items: center;
+            display: flex;
+            justify-content: center;
+        }
+
+        .position-ref {
+            position: relative;
+        }
+
+        .top-right {
+            position: absolute;
+            right: 10px;
+            top: 18px;
+        }
+
+        .content {
+            text-align: center;
+        }
+
+        .title {
+            font-size: 84px;
+        }
+
+        .links > a {
+            color: #636b6f;
+            padding: 0 25px;
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: .1rem;
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+
+        .m-b-md {
+            margin-bottom: 30px;
+        }
+    </style>
 </head>
 <body>
 <h1>Hello, form</h1>
-
+<div class="grid-container">
 {!! Form::open(['url' => 'send-mail']) !!}
 
-
-{{Form::text('name')}}
-{{Form::text('email')}}
-{{Form::textarea('msg')}}
-{{Form::submit('Send')}}
+@if(count($errors)>0)
+    @foreach($errors->all() as $error)
+       <p> {{$error}}</p>
+        @endforeach
+    @endif
+<label class="links">ИМЯ{{Form::text('name')}}</label>
+<label>ПОЧТА{{Form::text('email')}}</label>
+<label>СООБЩЕНИЕ{{Form::textarea('msg')}}</label>
+{{Form::submit('Отправить')}}
 
 
 
 
 {!! Form::close() !!}
-
+</div>
 
 
 </body>
