@@ -6,12 +6,12 @@
 
     <title>Laravel form</title>
 
-    <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
     <style>
         html, body {
             background-color: #fff;
             color: #636b6f;
-            font-family: 'Nunito', sans-serif;
+            font-family: 'Montserrat', sans-serif;
             font-weight: 200;
             height: 100vh;
             margin: 0;
@@ -61,7 +61,7 @@
     </style>
 </head>
 <body>
-<h1>Hello, form</h1>
+<h1>Форма обратной связи</h1>
 <div class="grid-container">
 {!! Form::open(['url' => 'send-mail']) !!}
 
@@ -72,7 +72,7 @@
     @endif
 <label class="links">ИМЯ{{Form::text('name')}}</label>
 <label>ПОЧТА{{Form::text('email')}}</label>
-<label>СООБЩЕНИЕ{{Form::textarea('msg')}}</label>
+    <p><label>СООБЩЕНИЕ{{Form::textarea('msg')}}</label></p>
 {{Form::submit('Отправить')}}
 
 
